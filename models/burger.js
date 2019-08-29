@@ -12,13 +12,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         defaultValue: false
       }
-    },
-    {
-      // get rid of deletion time stamp
-      timestamps: true,
-      createdAt: "date_created",
-      updatedAt: "date_eaten",
-      deletedAt: false
     }
   );
 

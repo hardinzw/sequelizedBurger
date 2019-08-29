@@ -1,34 +1,34 @@
 // Requiring our models
 var db = require("../models");
 
-// Routes
+//Routes
 // =============================================================
 module.exports = app => {
-  // on page load or on redirects
+  //On page load or on redirects
   app.get("/", (req, res) => {
     res.redirect("/burgers");
   });
 
-  // on page load or on redirects
+  //On page load or on redirects
   app.get("/burgers", (req, res) => {
     var query = {};
     if (req.query.CustomerId) {
       query.Customer = req.query.CustomerId;
     }
 
-    // if the CustomerId field of the burgers table is not empty, include the customer of that id in the results
+    //If the CustomerId field of the burgers table is not empty, include the customer of that id in the results
     db.Burger
       .findAll({
         include: db.Customer,
         where: query
       })
       .then(data => {
-        var hbsObject = { burgers: data };
-        res.render("index", hbsObject);
+        var burgerObject = { burgers: data };
+        res.render("index", burgerObject);
       });
   });
 
-  // when submit button is pressed
+  //When submit button is pressed
   app.post("/burgers/create", (req, res) => {
     db.Burger
       .create({
@@ -39,10 +39,9 @@ module.exports = app => {
       });
   });
 
-  // when devour button is pressed
+  //When devour button is pressed
   app.put("/burgers/update", (req, res) => {
     var customerName = req.body.eaten_by;
-    // var customerNameTrim = customerName.toLowerCase().trim();
 
     db.Customer
       .findAll({
@@ -50,11 +49,11 @@ module.exports = app => {
       })
       .then(data => {
         if (data.length > 0) {
-          // if customer already exists in database, devour burger
+          //If customer already exists in database, devour burger
           console.log("customer already exists");
           devour(data[0].dataValues.id);
         } else {
-          // if customer does not exist in database, create new customer, then devour burger
+          //If customer does not exist in database, create new customer, then devour burger
           console.log("creating new customer");
           db.Customer
             .create({
@@ -64,10 +63,10 @@ module.exports = app => {
         }
       });
 
+    //Mark burger as devoured and record the id of the customer who ate it  
     function devour(customer) {
       console.log("devouring");
-
-      // mark burger as devoured and record the id of the customer who ate it
+      
       db.Burger
         .update(
           {

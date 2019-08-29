@@ -9,13 +9,6 @@ module.exports = (sequelize, DataTypes) => {
                     len: [1, 140]
                 }
             }
-        },
-        {
-            // only keep timestamp for creation
-            timestamps: true,
-            createdAt: "date_created",
-            updatedAt: false,
-            deletedAt: false
         }
     );
 

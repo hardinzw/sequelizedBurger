@@ -1,11 +1,72 @@
 body {
     width: 99%;
     height: 900px;
-    background-color: #fc6;
+    background-color: rgb(250, 227, 18);
   }
   
-  #top-bar {
-    margin-top: 28px;
+  #title {
+    margin-top: 2%;
+  }
+
+  h1 {
+    color: #f30;
+    font-size: 75px;
+    margin-top: 3%;
+    font-family: 'Righteous', cursive;
+  }
+
+  img {
+    height: 50%
+  }
+
+  #devourer {
+    width: 100%
+  }
+  
+  #burger-data {
+  }
+  
+  #enter_text {
+    width: 400px;
+    height: 80px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: auto;
+    font-size: 10px;
+  }
+  
+  #devourer-input {
+    width: 10%;
+    padding-right: 10%;
+  }
+  
+  #text-enter-button {
+    margin-top: 10px;
+    margin-bottom: 18px;
+  }
+  
+
+
+
+
+  #requested-burger {
+    margin: 10px 10px 10px 10px;
+    padding: 10%;
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    color: #f30;
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      width: 990px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      width: 990px;
+    }
   }
   
   .spacing-reset {
@@ -20,32 +81,21 @@ body {
     list-style-type: none;
     border: 0;
   }
-  
-  @media (min-width: 1200px) {
-    .container {
-      width: 990px;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .container {
-      width: 990px;
-    }
-  }
+
   
   .enter_section {
+    height: 100px;
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
   }
   
   #enter_text {
-    width: 400px;
-    height: 80px;
+    width: 50%;
     padding-top: 10px;
     padding-bottom: 10px;
     margin: auto;
-    font-size: 38px;
+    font-size: 10px;
   }
   
   .task {
@@ -61,8 +111,4 @@ body {
   #text-enter-button {
     margin-top: 10px;
     margin-bottom: 18px;
-  }
-  
-  h1 {
-    color: #f30;
   }

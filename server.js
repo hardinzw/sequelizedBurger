@@ -1,12 +1,12 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-//var methodOverride = require("method-override");
+var methodOverride = require("method-override");
 
 var app = express();
 
 var db = require("./models");
 
-// // parse application/x-www-form-urlencoded
+//Parse application/x-www-form-urlencoded
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
@@ -16,7 +16,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(__dirname + "/public"));
 
 // // override with POST having ?_method=DELETE
-//app.use(methodOverride("_method"));
+app.use(methodOverride("_method"));
 
 // initiate handlebars with default layout
 var exphbs = require("express-handlebars");
