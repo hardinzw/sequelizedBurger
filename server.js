@@ -31,7 +31,7 @@ app.set("view engine", "handlebars");
 // establish api routes for database access
 require("./routes/api-routes")(app);
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5500;
 // connect to database, sync with database, then listen on port 3000
 db.sequelize.sync().then(() => {
 	app.listen(port, () => {
