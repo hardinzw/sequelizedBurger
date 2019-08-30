@@ -3,7 +3,6 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 
 var app = express();
-
 var db = require("./models");
 
 //Parse application/x-www-form-urlencoded
@@ -15,7 +14,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(__dirname + "/public"));
 
-// // override with POST having ?_method=DELETE
+//Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
 
 // initiate handlebars with default layout

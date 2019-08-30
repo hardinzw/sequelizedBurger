@@ -23,8 +23,8 @@ module.exports = app => {
         where: query
       })
       .then(data => {
-        var burgerObject = { burgers: data };
-        res.render("index", burgerObject);
+        var hbsObject = { burgers: data };
+        res.render("index", hbsObject);
       });
   });
 

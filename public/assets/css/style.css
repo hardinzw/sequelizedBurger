@@ -1,60 +1,80 @@
 body {
     width: 99%;
-    height: 900px;
     background-color: rgb(250, 227, 18);
   }
   
-  #title {
-    margin-top: 2%;
+  #header {
+    margin-bottom: -200px
+  }
+
+  #burgersDiv {
+    width: 100%;
   }
 
   h1 {
     color: #f30;
-    font-size: 75px;
+    font-size: 60px;
     margin-top: 3%;
     font-family: 'Righteous', cursive;
   }
 
-  img {
-    height: 50%
+  h2 {
+    margin-left: 3%;
+    color: #f30;
+    font-family: 'Righteous', cursive;
+    font-size: 25px
+    
   }
 
-  #devourer {
-    width: 100%
+  img {
+    height: 30%
   }
-  
-  #burger-data {
+
+  p {
+    font-size: 20px;
+    font-family: 'Righteous', cursive;
+    color: #f30;
   }
-  
-  #enter_text {
-    width: 400px;
-    height: 80px;
-    padding-top: 20px;
+
+  .col-1 {
+    margin-top: 2%
+  }
+
+  .col-2 {
+    margin-top: 2%
+  }
+
+  .devour-button {
+    background: #f30;
+    border-color: rgb(53, 26, 10);
+    font-family: 'Righteous', cursive;
+  }
+
+  #input-container {
+    width: 30%
+  }
+
+  #input-text {
+    padding-top: 10px;
     padding-bottom: 10px;
     margin: auto;
-    font-size: 10px;
-  }
-  
-  #devourer-input {
-    width: 10%;
-    padding-right: 10%;
-  }
-  
-  #text-enter-button {
-    margin-top: 10px;
-    margin-bottom: 18px;
-  }
-  
-
-
-
-
-  #requested-burger {
-    margin: 10px 10px 10px 10px;
-    padding: 10%;
+    font-size: 20px;
     font-family: 'Righteous', cursive;
-    font-size: 40px;
-    color: #f30;
+  }
+
+  #ordered-list {
+    font-family: 'Righteous', cursive;
+  }
+
+  .order-button {
+    background: #f30;
+    border-color: rgb(53, 26, 10);
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+  }
+  
+  #consumer-input {
+    width: 100%
   }
 
   @media (min-width: 1200px) {
@@ -69,46 +89,3 @@ body {
     }
   }
   
-  .spacing-reset {
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
-  
-  .list-reset {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    border: 0;
-  }
-
-  
-  .enter_section {
-    height: 100px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  #enter_text {
-    width: 50%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: auto;
-    font-size: 10px;
-  }
-  
-  .task {
-    border-color: black;
-    border-style: solid;
-    border-width: 3px;
-  }
-  
-  .button-size {
-    padding-bottom: 20px;
-  }
-  
-  #text-enter-button {
-    margin-top: 10px;
-    margin-bottom: 18px;
-  }
