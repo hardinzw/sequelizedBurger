@@ -13,13 +13,11 @@
   <div class="row">
     <div class="col-12 text-center input-section">
       <form action="/burgers/create" method="POST">
-
         <h2>Enter the most delicous burger you can think of, then click "Order!"</h2>
-
-        <div class="input-group col-md-12 col-xs-12">
-          <input type="text" class="form-control order-input" name="burger_name" value="" placeholder="Add Burger" id="input-text">
+        <div class="input-group col-md-12 col-xs-12" id="input-box">
+          <input type="text" class="form-control order-input" name="burger_name" placeholder="Add Burger" id="input-text">
           <span class="input-group-btn order-button"></span>
-            <button class="btn btn-primary order-button" type="submit">Order!</button>
+          <button class="btn btn-primary order-button" type="submit">Order!</button>
           </span>
         </div>
       </form>
@@ -31,47 +29,47 @@
   <div class="row">
 
     <!--Ordered Burgers (ready to eat)-->
-    <div class="col-md-6 col-1">
+    <div class="col-md-6 col-1 text-center">
 
       <h2>Ordered Burgers:</h2>
 
       <div id="ordered-list">
         {{#each burgers}}
         {{#unless this.devoured}}
-        <form method="POST" action="/burgers/update?_method=PUT" id="devourer">
-          <input type="hidden" type="text" name="burger_id" value={{this.id}}>
-            <div class="input-group col-md-12 col-xs-12" id="posted-orders">
-              <li class="form-control">
-                <div class="col-md-7 col-xs-7">
-                  <p>{{this.id}}. {{this.burger_name}}</p>
-                </div>
-                <div class="col-md-5 col-xs-5"><input name="eaten_by" type="text" class="form-control" id="consumer-input" placeholder="Name"></div>
-              </li>
-              <span class="input-group-btn devour-button"></span>
-                <button class="btn btn-primary devour-button" type="submit">Devour It!</button>
-              </span>
-            </div>
+        <form method="POST" action="/burgers/update?_method=PUT">
+          <input type="hidden" type="text" name="burger_id" value="{{this.id}}">
+           <div class="input-group col-md-12 col-xs-12" id="posted-orders">
+            <li class="form-control">
+              <div class="col-md-7 col-xs-7">
+                <p>{{this.id}}. {{this.burger_name}}</p>
+              </div>
+              <div class="col-md-5 col-xs-5"><input name="eaten_by" type="text" class="form-control" id="consumer-input" placeholder="Name"></div>
+            </li>
+            <span class="input-group-btn devour-button"></span>
+            <button class="btn btn-primary devour-button" type="submit">Devour It!</button>
+            </span>
+          </div>
         </form>
         {{/unless}}
         {{/each}}
       </div>
     </div>
 
-<!--Devoured Burgers-->
-   <div class="col-md-6 col-2">
-     <h2>Devoured Burgers:</h2>
-       <div id="devoured-list">
-         {{#each burgers}}
-         {{#if this.devoured}}
-           <div class="input-group col-md-12 col-xs-12">
-             <li class="form-control">
-               <div class="col-md-6 col-xs-6">
-                 <p>{{this.id}}. {{this.burger_name}} Devoured by {{this.Customer.dataValues.customer_name}}</p>
-               </div>
-             </li>
-           </div>
-         {{/if}}
-         {{/each}}
+    <!--Devoured Burgers-->
+    <div class="col-md-6 col-2 text-center">
+      <h2>Devoured Burgers:</h2>
+      <div id="devoured-list">
+        {{#each burgers}}
+        {{#if this.devoured}}
+          <div class="input-group col-md-12 col-xs-12">
+            <li class="form-control">
+              <div class="col-md-12 col-xs-12 text-center">
+                <p>{{this.id}}. {{this.burger_name}} Devoured by {{this.Customer.dataValues.customer_name}}</p>
+              </div>
+            </li>
+          </div>
+        {{/if}}
+        {{/each}}
       </div>
     </div>
   </div>

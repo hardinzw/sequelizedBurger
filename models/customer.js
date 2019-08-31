@@ -1,20 +1,21 @@
+"use strict"
 module.exports = (sequelize, DataTypes) => {
-    var Customer = sequelize.define("Customer",
-        {
-            customer_name: {
+    var Customer = sequelize.define("Customer", {
+        customer_name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-            len: [1, 140]
+                len: [1,100]
             }
         }
-      }
-    );
+    });
 
-    // establish association
-    Customer.associate = models => {
-        Customer.hasMany(models.Burger);
+    Customer.associate = (models) => {
+        Customer.hasMany(models.Burger, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
     };
-
     return Customer;
 };

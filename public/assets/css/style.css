@@ -51,7 +51,7 @@ body {
   }
 
   #input-container {
-    width: 30%
+    width: 40%;
   }
 
   #input-text {
@@ -64,6 +64,7 @@ body {
 
   #ordered-list {
     font-family: 'Righteous', cursive;
+    margin: auto;
   }
 
   .order-button {
@@ -74,7 +75,7 @@ body {
   }
   
   #consumer-input {
-    width: 100%
+    width: 90%
   }
 
   @media (min-width: 1200px) {

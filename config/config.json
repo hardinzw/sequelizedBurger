@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Tyson4189$",
+    "password": null,
     "database": "burgers_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -14,11 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "wj0h07cvxe5udfb8",
-    "password": "tx5jy37yz925m0j8",
-    "database": "f0gb6oj0nstr0f2z",
-    "host": "otmaa16c1i9nwrek.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "use_env_variable": "JawsDB_URL",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
